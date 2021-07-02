@@ -1,0 +1,53 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarResponsivo">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']">Home |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/fornecedores']" >Fornecedor |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/clientes']" >Cliente |</a>
+        </li>
+
+        </ul>
+    </div>
+  </div>
+</nav>
+<div class="container main-container">
+  <h1 class="text-center"><b>Lista de Produtos</b></h1>
+  <br />
+
+  <div class="row text-center">
+    <div *ngFor="let produto of produtos"
+      class="col-md-3"
+      style="padding-bottom: 30px"
+    >
+      <div class="card h-100">
+        <a class="text-decoration-none">
+          <div style="align-content: center"></div>
+        </a>
+        <div class="card-body">
+          <h4 class=""><b> Produto: {{ produto.descricao | titlecase }} </b></h4>
+          <p>Por apenas:</p>
+          <!--colocar vírgula no preço -->
+          <div><h4>R$10,00 {{ produto.unidade }} </h4></div>
+
+          <div class="card-footer">
+            <a >
+              <button class="btn-secondary">Editar</button>
+              <button class="btn-danger">Deletar</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
